@@ -16,7 +16,7 @@ var commentRoutes        = require("./routes/comments"),
     indexRoutes          = require("./routes/index");
 
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect("mongodb+srv://yelpcamp:webdevbootcamp@wdbcluster-kf7a6.mongodb.net/<dbname>?retryWrites=true&w=majority", { 
+mongoose.connect("mongodb+srv://yelpcamp:webdevbootcamp@herokucluster.kf7a6.mongodb.net/<dbname>?retryWrites=true&w=majority", { 
     useNewUrlParser: true,
     useCreateIndex: true 
 }).then(() =>{
