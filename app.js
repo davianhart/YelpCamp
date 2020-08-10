@@ -16,7 +16,14 @@ var commentRoutes        = require("./routes/comments"),
     indexRoutes          = require("./routes/index");
 
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect("mongodb://localhost/yelp_camp_v6", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://yelpcamp:webdevbootcamp@wdbcluster-kf7a6.mongodb.net/<dbname>?retryWrites=true&w=majority", { 
+    useNewUrlParser: true,
+    useCreateIndex: true 
+}).then(() =>{
+    console.log("connected to DB!")
+}).catch(err => {
+    console.log("ERROR:", err.message);
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
