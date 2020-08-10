@@ -19,7 +19,7 @@ mongoose.set("useUnifiedTopology", true);
 mongoose.connect("mongodb://localhost/yelp_camp_v6", { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 app.set("view engine", "ejs");
